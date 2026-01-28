@@ -7,6 +7,7 @@
 
 * {
   margin: 0;
+  box-sizing: content-box;
 }
 body {
   background-color: rgb(0, 0, 0);
@@ -49,56 +50,103 @@ hr {
   background-position: center;
   background-size: cover;
   height: 80vh;
-  margin: 20px 0 80px 0;
+  margin: 20px 0 50px 0;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
 #moshiname {
   position: relative;
   font-family: "Roboto";
-  color: white;
-  text-shadow: 0 0 20 px black;
+  color: rgba(255, 255, 255, 0.9);
+  /* text-shadow: 0 0 2px black; */
   font-size: clamp(15dvw, 15vw, 20dvw);
+  opacity: 0; /* invisible at first */
+  transform: translateY(20px); /* slight downward offset */
+  transition: 0.5s ease;
 }
+#moshiname.visible {
+  opacity: 1;
+  transform: translateY(0); /* moves into place */
+}
+
 #box1 {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   width: text;
-  max-width: 200px;
+  max-width: 250px;
   height: auto;
   padding: 15px;
-  position: relative;
+  bottom: 60px;
+  position: absolute;
   border: 2px solid black;
+  border-radius: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  background-color: rgb(201, 41, 44);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.555);
   transition: 0.2s ease;
 }
-#box1 p {
+#box1 a {
   font-family: "Google Sans";
-  font-size: clamp(6px, 15px, 22px);
-  color: black;
+  font-size: clamp(6px, 19px, 22px);
+  color: rgb(255, 255, 255);
   white-space: nowrap;
+  text-decoration: none;
 }
-#box1:hover {
+#box1:hover,
+#box2:hover {
   transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.35);
 }
 .second-container {
-  background-image: url("images/boat1.jpg");
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+    url("images/boat1.jpg") center/cover no-repeat;
   background-position: center;
   background-size: cover;
   height: 80vh;
   margin: 20px 0;
   position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#box2 {
+  width: auto;
+  max-width: 90%;
+  white-space: nowrap;
+  height: auto;
+  padding: 7px 25px 7px 25px;
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 24px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.555);
+  transition: 0.2s ease;
+}
+#box2 a {
+  color: black;
+  font-family: "Google Sans";
+  text-decoration: none;
+}
+#box1 a {
+  font-family: "Google Sans";
+  font-size: clamp(6px, 19px, 22px);
+  color: rgb(0, 0, 0);
+  white-space: nowrap;
+  text-decoration: none;
 }
 a#floating-membership {
   font-family: "Google Sans";
@@ -108,7 +156,7 @@ a#floating-membership {
   height: 50px;
   width: 150px;
   border-radius: 50px;
-  background-color: rgb(254, 235, 122);
+  background-color: rgb(254, 235, 122, 0.8);
   color: rgb(0, 0, 0);
   text-decoration: none;
   position: fixed;
@@ -142,4 +190,40 @@ a#floating-membership:hover {
   height: auto;
   width: 90%;
   max-width: 500px;
+}
+.footer {
+  height: 300px;
+  width: 100vw;
+  background-color: rgba(201, 41, 44, 0.916);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.foot {
+  /* border: 5px solid pink;
+  background-color: aqua; */
+  height: 80%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: large;
+  font-style: normal;
+  text-decoration: none;
+  font-family: "Google Sans";
+}
+.foot a {
+  text-decoration: none;
+  color: black;
+}
+.foot h3 {
+  text-decoration: underline;
+}
+#social a {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+#deliveroo {
+  height: 18px;
 }

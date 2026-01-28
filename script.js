@@ -1,5 +1,6 @@
 const burger = document.querySelector(".burger");
 const menu = document.querySelector(".mobile-menu");
+const menuLinks = document.querySelectorAll(".mobile-menu a");
 
 const toggleMenu = () => {
   const isOpen = burger.classList.toggle("open");
@@ -17,5 +18,23 @@ document.addEventListener("click", (e) => {
     menu.classList.contains("open")
   ) {
     toggleMenu();
+  }
+});
+
+menuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (menu.classList.contains("open")) {
+      toggleMenu();
+    }
+  });
+});
+const myElement = document.getElementById("moshiname");
+
+window.addEventListener("scroll", () => {
+  const triggerPoint = 50; // pixels scrolled before showing
+  if (window.scrollY > triggerPoint) {
+    myElement.classList.add("visible");
+  } else {
+    myElement.classList.remove("visible"); // optional: hide again
   }
 });
