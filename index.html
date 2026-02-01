@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
+    <title>Moshimo</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -21,11 +21,17 @@
       src="https://kit.fontawesome.com/c8cb44d56f.js"
       crossorigin="anonymous"></script>
 
-    <!-- 192.168.1.11:5500 -->
+    <!-- 192.168.1.31:5500 -->
   </head>
   <body>
     <header>
-      <a href=""></a>
+      <div id="logo">
+        <a href="index.html">
+          <img
+            src="images/moshimo-brighton-sushi-restaurant-logo-black.jpg"
+            alt="Restaurant Logo"
+        /></a>
+      </div>
       <button class="burger" aria-label="Open menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -65,13 +71,7 @@
           </li>
         </ul>
       </nav>
-      <div id="logo">
-        <a href="index.html">
-          <img
-            src="images/moshimo-brighton-sushi-restaurant-logo-black.jpg"
-            alt="Restaurant Logo"
-        /></a>
-      </div>
+
       <div class="spacer"></div>
     </header>
     <main>
@@ -81,17 +81,44 @@
         >
       </div>
       <div class="first-container">
-        <!-- <div></div> -->
         <p id="moshiname">MOSHIMO</p>
         <div id="box1">
           <a href="reservation.html">BOOK A TABLE</a>
         </div>
+      </div>
+      <div class="menus">
+        <p id="menu-presentation">MENUS</p>
+      </div>
+      <div class="grid">
+        <div id="menu1" style="grid-area: box-1"><p>EAT IN</p></div>
+        <div id="menu2" style="grid-area: box-2"><p>DRINKS</p></div>
+        <div id="menu3" style="grid-area: box-3"><p>TAKE-AWAY</p></div>
+        <div id="menu4" style="grid-area: box-4"><p>DELIVEROO</p></div>
       </div>
       <div class="second-container">
         <div></div>
         <div></div>
         <div id="box2"><a href="menus.html">Our Food</a></div>
       </div>
+
+      <div class="social-insta">
+        <h2>Follow Us</h2>
+        <a href="https://instagram.com/moshimobrighton" target="_blank"
+          ><i class="fa-brands fa-instagram" id="insta-logo"></i
+        ></a>
+      </div>
+      <a href="https://instagram.com/moshimobrighton" target="_blank">
+        <div class="carousel">
+          <div class="track" id="track">
+            <img src="images/instagram1.jpg" />
+            <img src="images/instagram2.jpg" />
+            <img src="images/instagram3.jpg" />
+            <img src="images/instagram4.jpg" />
+            <img src="images/instagram5.jpg" />
+            <img src="images/instagram6.jpg" />
+          </div>
+        </div>
+      </a>
     </main>
     <footer>
       <div class="footer" id="contact-info">
@@ -122,6 +149,7 @@
         </div>
       </div>
     </footer>
+    <script src="carousel.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
