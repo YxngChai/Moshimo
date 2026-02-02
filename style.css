@@ -8,8 +8,10 @@
   font-family: "EB Garamond";
   src: url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 }
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
 :root {
-  --moshimo-color: rgb(247, 26, 26);
+  --moshimo-color: rgb(238, 23, 58);
 }
 * {
   margin: 0;
@@ -33,10 +35,10 @@ header {
 }
 
 #logo img {
-  max-width: 500px; /* controls maximum size on big screens */
-  width: 50vw; /* responsive scaling on smaller screens */
-  height: auto; /* preserves aspect ratio */
-  min-width: 140px; /* prevents logo from shrinking too small */
+  max-width: 500px;
+  width: 50vw;
+  height: auto;
+  min-width: 140px;
 }
 .spacer {
   width: 40px;
@@ -104,8 +106,8 @@ hr {
   }
 }
 #box1 a {
-  font-family: "Roboto";
-  font-size: clamp(12px, 2em, 100px);
+  font-family: "Lato";
+  font-size: clamp(12px, 1.7em, 100px);
   color: rgb(0, 0, 0);
   /* text-shadow: 0 0 5px black; */
   text-align: center;
@@ -120,7 +122,7 @@ hr {
 }
 .second-container {
   background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+    linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)),
     url("images/boat1.jpg") center/cover no-repeat;
   background-position: center;
   background-size: cover;
@@ -132,29 +134,68 @@ hr {
   justify-content: space-evenly;
   align-items: center;
 }
-#box2 {
-  width: auto;
-  max-width: 90%;
-  white-space: nowrap;
-  height: auto;
-  padding: 7px 25px 7px 25px;
-  border: 2px solid black;
-  border-radius: 4px;
-  font-size: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.555);
-  transition: 0.2s ease;
+.membership-title,
+.fifty-percent {
+  position: absolute;
+  color: rgb(237, 17, 17);
+  font-family: "Lato";
+  text-shadow:
+    0 0 16px black,
+    0 0 5px black;
+  display: inline-block;
 }
-#box2 a {
-  color: black;
-  font-family: "Google Sans";
-  text-decoration: none;
+.alt-colour {
+  color: white;
 }
+.membership-title:hover,
+.fifty-percent:hover {
+  animation: jiggle 0.7s ease-in-out infinite;
+}
+@keyframes jiggle {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(-1px, 1px) rotate(-1deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  60% {
+    transform: translate(-1px, -1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(1px, 1px) rotate(1deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+.membership-title {
+  bottom: 10%;
+  right: 10%;
+  font-size: clamp(2.3em, 4vw, 5em);
+}
+.fifty-percent {
+  position: absolute;
+  top: 10%;
+  left: -100%;
+  font-size: clamp(5em, 13vw, 15em);
+  transition: left 0.6s ease;
+}
+.fifty-percent.visible {
+  position: absolute;
+  left: 10%;
+}
+#membership-description {
+  height: 100px;
+  border: 1px solid palegreen;
+}
+#membership-description p {
+  color: white;
+  font-family: "Lato";
+}
+
 a#floating-membership {
   font-family: "Roboto";
   font-size: 1.2rem;
@@ -199,7 +240,6 @@ a#floating-membership:hover {
   width: 90%;
   max-width: 500px;
 }
-
 #social a {
   display: inline-block;
   margin-right: 20px;
@@ -216,7 +256,7 @@ a#floating-membership:hover {
   justify-content: center;
   align-items: center;
   /* border: 1px solid white; */
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .menus p {
   font-family: "Roboto";
@@ -240,7 +280,7 @@ a#floating-membership:hover {
   margin-bottom: 100px;
 }
 
-.grid > div {
+.grid > a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -281,7 +321,7 @@ a#floating-membership:hover {
   height: 100%;
   background-size: cover;
   background-position: center;
-  opacity: 0.8;
+  opacity: 0.9;
   z-index: 0;
   transition: opacity 0.3s;
   border-radius: 10px;
@@ -322,15 +362,9 @@ a#floating-membership:hover {
   #menu4 p {
     font-size: 2em;
   }
-  #menu1::before,
-  #menu2::before,
-  #menu3::before,
-  #menu4::before {
-    opacity: 0.9;
-  }
 }
 
-.grid > div:hover {
+.grid > a:hover {
   transform: scale(1.15);
   z-index: 10;
 }

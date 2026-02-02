@@ -29,12 +29,30 @@ menuLinks.forEach((link) => {
   });
 });
 const myElement = document.getElementById("moshiname");
+const isTouch = window.matchMedia("(hover: none)").matches;
 
-window.addEventListener("scroll", () => {
-  const triggerPoint = 50; // pixels scrolled before showing
-  if (window.scrollY > triggerPoint) {
+if (isTouch) {
+  setTimeout(() => {
     myElement.classList.add("visible");
-  } else {
-    myElement.classList.remove("visible"); // optional: hide again
-  }
-});
+  }, 500);
+} else {
+  window.addEventListener("scroll", () => {
+    const triggerPoint = 50; // pixels scrolled before showing
+    if (window.scrollY > triggerPoint) {
+      myElement.classList.add("visible");
+    } else {
+      myElement.classList.remove("visible"); // optional: hide again
+    }
+  });
+}
+
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  },
+  { threshold: 0.2 },
+);
+
+observer.observe(document.querySelector(".fifty-percent"));
