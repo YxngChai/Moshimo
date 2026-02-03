@@ -19,6 +19,7 @@
 }
 body {
   background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
 }
 header {
   display: flex;
@@ -143,6 +144,10 @@ hr {
     0 0 16px black,
     0 0 5px black;
   display: inline-block;
+  opacity: 0;
+  transition:
+    transform 1s ease,
+    opacity 1s ease;
 }
 .alt-colour {
   color: white;
@@ -175,17 +180,23 @@ hr {
   bottom: 10%;
   right: 10%;
   font-size: clamp(2.3em, 4vw, 5em);
+  transform: translateX(100%);
 }
 .fifty-percent {
   position: absolute;
   top: 10%;
-  left: -100%;
+  left: 10%;
+  transform: translateX(-30%);
   font-size: clamp(5em, 13vw, 15em);
-  transition: left 0.6s ease;
 }
 .fifty-percent.visible {
   position: absolute;
-  left: 10%;
+  transform: translateX(0);
+  opacity: 1;
+}
+.membership-title.visible {
+  transform: translateX(0);
+  opacity: 1;
 }
 #membership-description {
   height: 100px;
@@ -340,7 +351,7 @@ a#floating-membership:hover {
   /* border: 1px solid white; */
   /* background-color: rgba(0, 0, 0, 0.29); */
   padding: 15px;
-  font-size: 4em;
+  font-size: 3em;
   position: absolute;
   bottom: 40%;
   color: white;
@@ -364,6 +375,12 @@ a#floating-membership:hover {
   }
 }
 
+.temaki-party {
+  background: url("images/boat1.jpg") center/cover no-repeat;
+  height: 80vh;
+  margin: 20px 0;
+  position: relative;
+}
 .grid > a:hover {
   transform: scale(1.15);
   z-index: 10;

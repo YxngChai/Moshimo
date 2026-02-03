@@ -46,13 +46,32 @@ if (isTouch) {
   });
 }
 
-const observer = new IntersectionObserver(
-  ([entry]) => {
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
+      console.log(entry.target);
       entry.target.classList.add("visible");
+    } else {
+      entry.target.classList.remove("visible");
     }
-  },
-  { threshold: 0.2 },
-);
+  });
+}, {});
+const moshiElements = document.querySelectorAll(".slide");
+moshiElements.forEach((el) => observer.observe(el));
 
-observer.observe(document.querySelector(".fifty-percent"));
+// const observer = new IntersectionObserver(
+//   (entries) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         entry.target.querySelectorAll(".slide").forEach((el) => {
+//           el.classList.add("visible");
+//         });
+//       }
+//     });
+//   },
+//   { threshold: 0.3 },
+// );
+
+// document.querySelectorAll(".second-container").forEach((container) => {
+//   observer.observe(container);
+// });
