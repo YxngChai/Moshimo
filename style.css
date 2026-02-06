@@ -1,17 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 .roboto-uniquifier {
   font-family: "Roboto", sans-serif;
 }
 .google-uniquifier {
   font-family: "Google Sans", sans-serif;
 }
-@font-face {
-  font-family: "EB Garamond";
-  src: url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+.ebgaramond {
+  font-family: "EB Garamond", serif;
 }
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+.lato-uniquifier {
+  font-family: "Lato", sans-serif;
+}
 
 :root {
   --moshimo-color: rgb(238, 23, 58);
+}
+button {
+  all: unset;
+}
+img {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none;
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none; /* standard */
+  pointer-events: none; /* optional: prevents clicks entirely */
 }
 * {
   margin: 0;
@@ -21,11 +36,15 @@ body {
   background-color: rgb(0, 0, 0);
   overflow-x: hidden;
 }
+
+/* ============================= */
+/* Header                        */
+/* ============================= */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 12vh;
+  height: max(9vh, 120px);
 }
 #logo {
   position: absolute;
@@ -50,9 +69,9 @@ header {
   }
 }
 
-hr {
-  background-color: aliceblue;
-}
+/* ============================= */
+/* Home Screen + Booking Btn     */
+/* ============================= */
 
 .first-container {
   background-image: url("images/indoor1.jpg");
@@ -78,7 +97,7 @@ hr {
 }
 #moshiname.visible {
   opacity: 1;
-  transform: translateY(0); /* moves into place */
+  transform: translateY(0);
 }
 
 #box1 {
@@ -116,11 +135,13 @@ hr {
   white-space: nowrap;
   text-decoration: none;
 }
-#box1:hover,
-#box2:hover {
+#box1:hover {
   transform: scale(1.1);
   background: rgba(255, 255, 255, 0.8);
 }
+/* ============================= */
+/* Membership                    */
+/* ============================= */
 .second-container {
   background:
     linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)),
@@ -134,6 +155,7 @@ hr {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  overflow: hidden;
 }
 .membership-title,
 .fifty-percent {
@@ -207,6 +229,10 @@ hr {
   font-family: "Lato";
 }
 
+/* ============================= */
+/* Membership floating btn       */
+/* ============================= */
+
 a#floating-membership {
   font-family: "Roboto";
   font-size: 1.2rem;
@@ -225,7 +251,7 @@ a#floating-membership {
   z-index: 1000;
   text-align: center;
   display: flex;
-  justify-content: center; /* horizontal center */
+  justify-content: center;
   align-items: center;
   transition: transform 0.2s ease;
 }
@@ -233,40 +259,14 @@ a#floating-membership:hover {
   transform: scale(1.1);
 }
 
-.reservations {
-  background-image: url("images/indoor1.jpg");
-
-  background-position: center;
-  background-size: cover;
-  height: 80vh;
-  margin: 20px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.reservations img {
-  height: auto;
-  width: 90%;
-  max-width: 500px;
-}
-#social a {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-#deliveroo {
-  height: 20px;
-  position: relative;
-  top: 3px;
-}
+/* ============================= */
+/* Menu Grid                     */
+/* ============================= */
 .menus {
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid white; */
   margin-bottom: 40px;
 }
 .menus p {
@@ -348,8 +348,6 @@ a#floating-membership:hover {
 #menu2 p,
 #menu3 p,
 #menu4 p {
-  /* border: 1px solid white; */
-  /* background-color: rgba(0, 0, 0, 0.29); */
   padding: 15px;
   font-size: 3em;
   position: absolute;
@@ -374,17 +372,186 @@ a#floating-membership:hover {
     font-size: 2em;
   }
 }
-
-.temaki-party {
-  background: url("images/boat1.jpg") center/cover no-repeat;
-  height: 80vh;
-  margin: 20px 0;
-  position: relative;
-}
 .grid > a:hover {
   transform: scale(1.15);
   z-index: 10;
 }
+
+/* ============================= */
+/* Temaki Party                  */
+/* ============================= */
+
+.temaki-party {
+  background: url("images/temaki-party.jpg") center/cover no-repeat;
+  height: 80vh;
+  margin: 20px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.temaki h3 {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto";
+  white-space: nowrap;
+  color: white;
+  font-size: clamp(3.5em, 8vw, 8em);
+  letter-spacing: 6px;
+  padding-top: 50px;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  margin: 50px 50px 50px;
+}
+
+#book-temaki-button {
+  width: auto;
+  min-width: 100px;
+  max-width: 350px;
+  height: auto;
+  padding: 15px 25px 15px 25px;
+  bottom: 10vh;
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.555);
+  transition: 0.2s ease;
+}
+
+@media (max-width: 1000px) {
+  #book-temaki-button {
+    font-size: 0.5em;
+  }
+}
+#book-temaki-button a {
+  font-family: "Lato";
+  font-size: clamp(16px, 1.7em, 100px);
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 8px black;
+  padding: 2px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+}
+#book-temaki-button:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.temaki-presentation {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  z-index: 10;
+}
+.temaki-presentation div {
+  height: 50vw;
+}
+
+.temaki-presentation div p {
+  padding: 5%;
+}
+.temaki-presentation img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 800px) {
+  .temaki-presentation {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "t-box-1"
+      "t-box-2"
+      "t-box-4"
+      "t-box-3";
+  }
+  .temaki-presentation .t-box-1 {
+    grid-area: t-box-1;
+  }
+  .temaki-presentation .t-box-2 {
+    grid-area: t-box-2;
+  }
+  .temaki-presentation .t-box-3 {
+    grid-area: t-box-3;
+  }
+  .temaki-presentation .t-box-4 {
+    grid-area: t-box-4;
+  }
+  .temaki-presentation div {
+    height: 100vw;
+  }
+}
+
+.t-box-1,
+.t-box-4 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.temaki-presentation p {
+  color: rgb(255, 255, 255);
+  font-family: "Lato";
+}
+.temaki-presentation .t-box-1 p {
+  font-size: clamp(1.3em, 2.8vw, 2em);
+  white-space: nowrap;
+}
+
+.temaki-presentation .t-box-4 p {
+  padding: min(7vw, 50px);
+  font-size: clamp(1.3em, 2.8vw, 2em);
+}
+
+.alt-colour-temaki {
+  color: var(--moshimo-color);
+}
+
+.temaki-options {
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid yellow; */
+  margin-bottom: 50px;
+}
+.temaki-options > * {
+  position: relative;
+  width: 40vw;
+  height: 80px;
+  font-family: "Lato";
+  font-size: 1em;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border-bottom: 1px solid gold;
+  border-top: 1px solid gold; */
+  z-index: 5;
+  color: white;
+}
+.temaki-options > *::after {
+  content: "";
+  position: absolute; /* position relative to the parent */
+  bottom: 0; /* stick to bottom */
+  left: 50%; /* start at center */
+  transform: translateX(-50%); /* center the underline */
+  width: 60%; /* underline width */
+  height: 2px; /* thickness */
+  background-color: gold; /* color */
+}
+.temaki-options > a:hover,
+.temaki-options > button:hover {
+  background-color: gold;
+  color: black;
+}
+
 .footer {
   height: 300px;
   width: 100vw;
@@ -408,10 +575,25 @@ a#floating-membership:hover {
   text-decoration: none;
   color: black;
 }
+
+#deliveroo {
+  height: 20px;
+  position: relative;
+  top: 3px;
+}
+
+#social a {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+/* ============================= */
+/* Instagram Caroussel           */
+/* ============================= */
+
 .social-insta {
   font-family: "Google Sans";
   font-size: 2em;
-  /* border: 1px solid white; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -471,6 +653,5 @@ a#floating-membership:hover {
   opacity: 70%;
 }
 .track img:hover {
-  /* transform: scale(1.1); */
   opacity: 100%;
 }
