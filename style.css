@@ -26,7 +26,7 @@ img {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE/Edge */
   user-select: none; /* standard */
-  pointer-events: none; /* optional: prevents clicks entirely */
+  /* pointer-events: none; optional: prevents clicks entirely */
 }
 * {
   margin: 0;
@@ -144,12 +144,12 @@ header {
 /* ============================= */
 .second-container {
   background:
-    linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)),
+    linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
     url("images/boat1.jpg") center/cover no-repeat;
   background-position: center;
   background-size: cover;
   height: 80vh;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -221,14 +221,91 @@ header {
   opacity: 1;
 }
 #membership-description {
-  height: 100px;
-  border: 1px solid palegreen;
+  position: relative;
+  height: 30vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 40px 0 40px;
+}
+#membership-description::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/membership-card.png") center/cover no-repeat;
+  opacity: 0.3;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+@media (max-width: 600px) {
+  #membership-description {
+    height: 55vh;
+  }
 }
 #membership-description p {
   color: white;
   font-family: "Lato";
+  font-size: 1.7em;
+  text-shadow: 0 0 8px black;
+}
+#membership-description h3 {
+  color: white;
+  font-family: "Lato";
+  font-size: 2em;
+  text-shadow:
+    0 0 8px black,
+    1 1 2px black;
 }
 
+.become-member {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  width: 70vw;
+  /* border: 1px solid green; */
+  margin-left: 15vw;
+}
+.become-member > * {
+  height: 100px;
+  font-family: "Lato";
+  letter-spacing: 2px;
+  font-size: clamp(1em, 4vw, 2em);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 5;
+  color: white;
+}
+.alt-size-member {
+  font-size: clamp(0.6em, 3vw, 1em);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  /* text-align: left; */
+}
+.become-member > *::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background-color: var(--moshimo-color);
+}
+.membership-block:has(.become-member:hover) #membership-description::before {
+  opacity: 1;
+  z-index: 2;
+}
+.membership-block:has(.become-member:hover) .become-member > *::after {
+  background-color: rgba(0, 0, 0, 0.895);
+}
 /* ============================= */
 /* Membership floating btn       */
 /* ============================= */
@@ -399,7 +476,7 @@ a#floating-membership:hover {
   font-size: clamp(3.5em, 8vw, 8em);
   letter-spacing: 6px;
   padding-top: 50px;
-  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  text-shadow: 0px 0px 8px rgb(0, 0, 0);
   margin: 50px 50px 50px;
 }
 
@@ -517,7 +594,6 @@ a#floating-membership:hover {
 .temaki-options {
   display: flex;
   justify-content: center;
-  /* border: 1px solid yellow; */
   margin-bottom: 50px;
 }
 .temaki-options > * {
@@ -531,60 +607,24 @@ a#floating-membership:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* border-bottom: 1px solid gold;
-  border-top: 1px solid gold; */
+
   z-index: 5;
   color: white;
 }
 .temaki-options > *::after {
   content: "";
-  position: absolute; /* position relative to the parent */
-  bottom: 0; /* stick to bottom */
-  left: 50%; /* start at center */
-  transform: translateX(-50%); /* center the underline */
-  width: 60%; /* underline width */
-  height: 2px; /* thickness */
-  background-color: gold; /* color */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background-color: gold;
 }
 .temaki-options > a:hover,
 .temaki-options > button:hover {
   background-color: gold;
   color: black;
-}
-
-.footer {
-  height: 300px;
-  width: 100vw;
-  background-color: rgba(201, 41, 44, 0.916);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.foot {
-  height: 80%;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-size: large;
-  font-style: normal;
-  text-decoration: none;
-  font-family: "Google Sans";
-}
-.foot a {
-  text-decoration: none;
-  color: black;
-}
-
-#deliveroo {
-  height: 20px;
-  position: relative;
-  top: 3px;
-}
-
-#social a {
-  display: inline-block;
-  margin-right: 20px;
 }
 
 /* ============================= */
@@ -650,8 +690,50 @@ a#floating-membership:hover {
   transition: 0.3s ease;
 }
 .track:hover img {
-  opacity: 70%;
+  opacity: 0.7;
 }
 .track img:hover {
-  opacity: 100%;
+  opacity: 1;
+}
+
+/* ============================= */
+/* Footer                        */
+/* ============================= */
+
+.footer {
+  height: 400px;
+  width: 100vw;
+  background-color: rgba(201, 41, 44, 0.916);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.foot {
+  height: 80%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: large;
+  font-style: normal;
+  text-decoration: none;
+  font-family: "Google Sans";
+}
+.foot a {
+  text-decoration: none;
+  color: black;
+}
+.foot h4 {
+  font-size: 1.5em;
+}
+
+#deliveroo {
+  height: 20px;
+  position: relative;
+  top: 3px;
+}
+
+#social a {
+  display: inline-block;
+  margin-right: 20px;
 }
