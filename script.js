@@ -1,3 +1,4 @@
+// Burger menu
 const burger = document.querySelector(".burger");
 const menu = document.querySelector(".mobile-menu");
 const menuLinks = document.querySelectorAll(".mobile-menu a");
@@ -28,6 +29,8 @@ menuLinks.forEach((link) => {
     }
   });
 });
+
+//Moshimo name fade in
 const myElement = document.getElementById("moshiname");
 const isTouch = window.matchMedia("(hover: none)").matches;
 
@@ -46,6 +49,7 @@ if (isTouch) {
   });
 }
 
+// Intersection observer
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -59,3 +63,13 @@ const observer = new IntersectionObserver((entries) => {
 const moshiElements = document.querySelectorAll(".slide");
 
 moshiElements.forEach((el) => observer.observe(el));
+
+// Open temaki info
+
+const temakiButton = document.querySelector(".temaki-informations");
+const temakiInfo = document.querySelector(".temaki-info");
+
+temakiButton.addEventListener("click", () => {
+  temakiInfo.classList.toggle("visible");
+  temakiButton.classList.toggle("visible");
+});
