@@ -60,7 +60,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {});
-const moshiElements = document.querySelectorAll(".slide");
+const moshiElements = document.querySelectorAll(".entry-animation");
 
 moshiElements.forEach((el) => observer.observe(el));
 
