@@ -686,31 +686,53 @@ a#floating-membership:hover {
 
 .giftcards {
   height: auto;
-  background-color: rgb(45, 45, 45);
+  background-color: rgb(26, 25, 25);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   overflow: hidden;
-  padding: 40px;
+  padding: 60px;
   gap: 30px;
 }
-.giftcards > * {
-  height: clamp(250px, 35vw, 400px);
-  flex: 1 1 400px;
-  min-width: 300px;
-  background: rgb(54, 54, 54);
-}
-.giftcards > img {
-  width: 100%;
-  height: auto;
-}
+
 .giftcards-info {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   padding-left: 30px;
   color: white;
+  font-family: "Lato", sans-serif;
+  height: 250px;
+  width: 400px;
+}
+.giftcards-info h3 {
+  font-size: 2em;
+}
+.giftcards img {
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.344);
+  border-radius: 5px;
+  width: clamp(320px, 40vw, 500px);
+  height: 1 1 auto;
+}
+.giftcards-info a {
+  background-color: red;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 1px 1px 5px black;
+  border-radius: 10px;
+  font-family: "Lato", sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+/* ============================= */
+/* Vouchers                      */
+/* ============================= */
+
+.vouchers {
+  height: 600px;
 }
 
 /* ============================= */
@@ -794,6 +816,7 @@ a#floating-membership:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* color: white; */
 }
 .foot {
   height: 80%;
@@ -808,7 +831,7 @@ a#floating-membership:hover {
 }
 .foot a {
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 .foot h4 {
   font-size: 1.5em;
@@ -824,3 +847,7 @@ a#floating-membership:hover {
   display: inline-block;
   margin-right: 20px;
 }
+
+/* ============================= */
+/* Vouchers                      */
+/* ============================= */
