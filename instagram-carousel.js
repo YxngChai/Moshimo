@@ -1,14 +1,14 @@
-const track = document.getElementById("track");
+const instaTrack = document.getElementById("track");
 const speed = 1; // pixels per frame
 
 // Clone images
-track.innerHTML += track.innerHTML;
+instaTrack.innerHTML += instaTrack.innerHTML;
 
 let position = 0;
 let halfWidth;
 
 function updateWidth() {
-  halfWidth = track.scrollWidth / 2;
+  halfWidth = instaTrack.scrollWidth / 2;
 }
 
 updateWidth();
@@ -21,7 +21,7 @@ function animate() {
     position = 0;
   }
 
-  track.style.transform = `translateX(${position}px)`;
+  instaTrack.style.transform = `translateX(${position}px)`;
   requestAnimationFrame(animate);
 }
 
