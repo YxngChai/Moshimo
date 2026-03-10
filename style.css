@@ -428,7 +428,7 @@ a#floating-membership:hover {
 #menu3 p,
 #menu4 p {
   padding: 15px;
-  font-size: 3em;
+  font-size: 2.5em;
   position: absolute;
   bottom: 40%;
   color: white;
@@ -448,7 +448,7 @@ a#floating-membership:hover {
   #menu2 p,
   #menu3 p,
   #menu4 p {
-    font-size: 2em;
+    font-size: 1.6em;
   }
 }
 .grid > a:hover {
@@ -713,6 +713,7 @@ a#floating-membership:hover {
   height: 250px;
   width: 400px;
 }
+
 .giftcards-info h3 {
   font-size: 2em;
 }
@@ -815,11 +816,10 @@ a#floating-membership:hover {
 .footer {
   height: 400px;
   width: 100vw;
-  background-color: rgba(207, 44, 46, 0.916);
+  background-color: #c83737;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* color: white; */
 }
 .foot {
   height: 80%;
