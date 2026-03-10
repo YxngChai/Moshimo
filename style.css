@@ -105,11 +105,11 @@ header {
   min-width: 100px;
   max-width: 350px;
   height: auto;
-  padding: 15px 25px 15px 25px;
+  padding: 15px 55px 15px 55px;
   bottom: 10vh;
   position: absolute;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,24 +120,27 @@ header {
   transition: 0.2s ease;
 }
 
-@media (max-width: 1000px) {
-  #box1 {
-    font-size: 0.5em;
-  }
-}
 #box1 a {
   font-family: "Lato";
-  font-size: clamp(12px, 1.7em, 100px);
-  color: rgb(0, 0, 0);
+  font-size: 1.4em;
+  color: rgba(0, 0, 0, 0.735);
   /* text-shadow: 0 0 5px black; */
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
   text-decoration: none;
 }
+@media (max-width: 600px) {
+  #box1 {
+    font-size: 0.7em;
+  }
+}
 #box1:hover {
   transform: scale(1.1);
   background: rgba(255, 255, 255, 0.8);
+}
+#box1:hover a {
+  color: #000000;
 }
 /* ============================= */
 /* Membership                    */
@@ -492,11 +495,11 @@ a#floating-membership:hover {
   min-width: 100px;
   max-width: 350px;
   height: auto;
-  padding: 15px 25px 15px 25px;
+  padding: 15px 105px 15px 105px;
   bottom: 10vh;
   position: absolute;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -509,14 +512,14 @@ a#floating-membership:hover {
 
 @media (max-width: 1000px) {
   #book-temaki-button {
-    font-size: 0.5em;
+    font-size: 0.7em;
   }
 }
 #book-temaki-button a {
   font-family: "Lato";
   font-size: clamp(16px, 1.7em, 100px);
   color: rgb(255, 255, 255);
-  text-shadow: 0 0 8px black;
+  text-shadow: 0 0 5px black;
   padding: 2px;
   text-align: center;
   overflow: hidden;
@@ -810,48 +813,6 @@ a#floating-membership:hover {
 }
 
 /* ============================= */
-/* Footer                        */
-/* ============================= */
-
-.footer {
-  height: 400px;
-  width: 100vw;
-  background-color: #c83737;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.foot {
-  height: 80%;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-size: large;
-  font-style: normal;
-  text-decoration: none;
-  font-family: "Google Sans";
-}
-.foot a {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-}
-.foot h4 {
-  font-size: 1.5em;
-}
-
-#deliveroo {
-  height: 20px;
-  position: relative;
-  top: 3px;
-}
-
-#social a {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-/* ============================= */
 /* Vouchers                      */
 /* ============================= */
 
@@ -922,4 +883,46 @@ a#floating-membership:hover {
   text-decoration: none;
   border-radius: 25px;
   padding: 10px;
+}
+
+/* ============================= */
+/* Footer                        */
+/* ============================= */
+
+.footer {
+  height: 400px;
+  width: 100vw;
+  background-color: #c22323;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.foot {
+  height: 80%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: large;
+  font-style: normal;
+  text-decoration: none;
+  font-family: "Google Sans";
+}
+.foot a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+.foot h4 {
+  font-size: 1.5em;
+}
+
+#deliveroo {
+  height: 20px;
+  position: relative;
+  top: 3px;
+}
+
+#social a {
+  display: inline-block;
+  margin-right: 20px;
 }

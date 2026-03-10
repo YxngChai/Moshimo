@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Moshimo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="stylesheet" href="burger.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="membership-page.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-96x96.png"
+      sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <script
+      src="https://kit.fontawesome.com/c8cb44d56f.js"
+      crossorigin="anonymous"></script>
+    <!-- 192.168.1.10:5500 -->
+  </head>
+  <body class="membership-page">
+    <header>
+      <div id="logo">
+        <a href="index.html">
+          <img
+            src="images/moshimo-brighton-sushi-restaurant-logo-black.jpg"
+            alt="Restaurant Logo"
+        /></a>
+      </div>
+      <!-- Nav Bar -->
+      <button class="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <!-- To do: Add social media to nav bar -->
+      <nav class="mobile-menu" aria-hidden="true" style="height: 100lvh">
+        <ul class="web-menu">
+          <li>
+            <i class="fa-solid fa-address-card"></i
+            ><a href="https://www.moshimo.co.uk/members/">Membership</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-calendar-check"></i
+            ><a href="reservation.html">Reservation</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-book-open"></i
+            ><a href="#menus-anchor">Menus</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-champagne-glasses"></i
+            ><a href="#temaki-anchor">Temaki Party</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-basket-shopping"></i
+            ><a href="#vouchers-anchor">Vouchers</a>
+          </li>
+          <li>
+            <i class="fa-regular fa-gift"></i
+            ><a
+              href="https://app.squareup.com/gift/ML3TQ2N0521BD/order"
+              target="_blank"
+              >Gift Cards</a
+            >
+          </li>
+          <li>
+            <i class="fa-regular fa-envelope"></i
+            ><a href="#contact-info">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="spacer"></div>
+    </header>
+
+    <main>
+      <div class="login">
+        <form class="login-card" action="moshimo.php" method="post">
+          <input type="email" name="username" placeholder="email" />
+          <input type="password" name="password" placeholder="password" />
+          <div class="login-buttons">
+            <input type="submit" name="login" value="login" />
+            <button>Register</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="footer" id="contact-info">
+        <div class="foot">
+          <h4>Contact</h4>
+          <!-- Add google map link -->
+          <p>Opticon, Bartholomew Square. Brighton. East Sussex. BN1 1JS</p>
+          <p>12 - 9 &nbsp;&nbsp;Mon - Sat</p>
+          <p>12 - 6 &nbsp;&nbsp;Sun</p>
+          <a href="mailto:info@moshimo.co.uk">info@moshimo.co.uk</a>
+          <a href="tel:+441273719195">01273 719195</a>
+          <div id="social">
+            <a href="https://instagram.com/moshimobrighton" target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/MoshimoBrighton/" target="_blank"
+              ><i class="fa-brands fa-square-facebook"></i
+            ></a>
+            <a href="https://x.com/moshimobrighton" target="_blank"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a
+              href="https://deliveroo.co.uk/menu/brighton/brighton-centre/moshimo"
+              target="_blank"
+              ><img
+                id="deliveroo"
+                src="images/deliveroo-logo.png"
+                alt="deliveroo-logo"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="instagram-carousel.js"></script>
+    <script src="vouchers-carousel.js"></script>
+  </body>
+</html>
