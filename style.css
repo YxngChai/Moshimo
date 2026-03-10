@@ -571,6 +571,15 @@ a#floating-membership:hover {
     height: 100vw;
   }
 }
+@media (min-width: 1800px) {
+  .temaki-presentation {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .temaki-presentation div {
+    height: 25vw;
+  }
+}
 
 .t-box-1,
 .t-box-4 {
@@ -585,13 +594,13 @@ a#floating-membership:hover {
   font-family: "Lato";
 }
 .temaki-presentation .t-box-1 p {
-  font-size: clamp(1.3em, 2.8vw, 2em);
+  font-size: clamp(1.3em, 2.8vw, 1.8em);
   white-space: nowrap;
 }
 
 .temaki-presentation .t-box-4 p {
   padding: min(7vw, 50px);
-  font-size: clamp(1.3em, 2.8vw, 2em);
+  font-size: clamp(1.3em, 2.8vw, 1.8em);
 }
 
 .alt-colour-temaki {
@@ -641,8 +650,6 @@ a#floating-membership:hover {
   cursor: pointer;
 }
 
-/* .temaki button:hover  */
-/* use JavaScript */
 .temaki-info {
   max-height: 0;
   overflow: hidden;
@@ -662,7 +669,7 @@ a#floating-membership:hover {
   box-sizing: border-box;
   border-bottom: 2px solid gold;
   text-align: center;
-  font-size: clamp(1.1em, 2vw, 1.6em);
+  font-size: clamp(1em, 2vw, 1.3em);
   color: white;
   font-family: "Lato", "Roboto", sans-serif;
 }
@@ -726,6 +733,9 @@ a#floating-membership:hover {
   cursor: pointer;
   text-decoration: none;
   color: white;
+}
+.giftcards-info a:hover {
+  background-color: rgb(215, 2, 2);
 }
 
 /* ============================= */
