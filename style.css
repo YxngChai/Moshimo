@@ -88,6 +88,7 @@ header {
 #moshiname {
   position: relative;
   font-family: "Roboto";
+  font-weight: 400;
   color: rgb(255, 255, 255);
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.545);
   font-size: clamp(15dvw, 15vw, 20dvw);
