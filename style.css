@@ -466,7 +466,7 @@ a#floating-membership:hover {
 
 .temaki-party {
   background: url("images/temaki-party.jpg") center/cover no-repeat;
-  height: 80vh;
+  height: 70vh;
   margin-top: 80px;
   position: relative;
   display: flex;
@@ -598,13 +598,13 @@ a#floating-membership:hover {
   font-family: "Lato";
 }
 .temaki-presentation .t-box-1 p {
-  font-size: clamp(1.3em, 2.8vw, 1.8em);
+  font-size: clamp(1.2em, 2.8vw, 1.5em);
   white-space: nowrap;
 }
 
 .temaki-presentation .t-box-4 p {
   padding: min(7vw, 50px);
-  font-size: clamp(1.3em, 2.8vw, 1.8em);
+  font-size: clamp(1.2em, 2.8vw, 1.5em);
 }
 
 .alt-colour-temaki {
