@@ -1,0 +1,170 @@
+.roboto-uniquifier {
+  font-family: "Roboto", sans-serif;
+}
+.google-uniquifier {
+  font-family: "Google Sans", sans-serif;
+}
+
+.burger {
+  position: fixed;
+  top: 45px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Menu hidden by default */
+.mobile-menu {
+  position: fixed;
+  top: 0px;
+  right: -100%;
+  width: 40%;
+  height: 100lvh;
+  background:
+    linear-gradient(to right, rgba(203, 41, 44, 0), rgba(0, 0, 0, 0.685)),
+    linear-gradient(135deg, rgb(210, 30, 33), rgb(0, 0, 0));
+  transition: right 0.4s ease;
+  z-index: 1000;
+  padding-top: calc(100px + env(safe-area-inset-top));
+  padding-bottom: calc(30px + env(safe-area-inset-bottom));
+  padding: 100px 30px;
+}
+.mobile-menu::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  bottom: -50px;
+  left: 0;
+  width: 3px;
+  background: rgba(255, 255, 255, 0.932);
+  filter: blur(0.5px);
+  pointer-events: none;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu li {
+  opacity: 1;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    color 0.3s ease;
+}
+
+.mobile-menu li a,
+.mobile-menu li i {
+  display: inline-block;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Dim all other items when hovering the menu */
+.mobile-menu ul:hover li a,
+.mobile-menu ul:hover li i {
+  opacity: 0.5;
+}
+
+/* Keep hovered item fully visible and scale */
+.mobile-menu ul li:hover a,
+.mobile-menu ul li:hover i {
+  opacity: 1;
+  transform: scale(1.1);
+  color: #ffffff;
+}
+.mobile-menu a {
+  text-decoration: none;
+  font-family: "Google Sans";
+  padding: 15px;
+  font-size: 1.5rem;
+  color: #fdfdfd;
+  text-shadow: 0 1px 3px black;
+}
+
+@media (orientation: landscape) and (max-height: 400px) {
+  .mobile-menu a {
+    font-size: 1rem;
+  }
+  .mobile-menu {
+    padding: 0px 20px;
+  }
+  .mobile-menu li {
+    margin: 25px 0;
+  }
+}
+
+/* Open state */
+.mobile-menu.open {
+  right: 0;
+}
+
+/* Animate burger to X */
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+@media (orientation: landscape) and (max-height: 400px) {
+  .burger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(2px, 11px);
+  }
+  .burger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(2px, -11px);
+  }
+}
+
+.fa-solid.fa-address-card,
+.fa-solid.fa-book-open,
+.fa-solid.fa-calendar-check,
+.fa-solid.fa-champagne-glasses,
+.fa-regular.fa-envelope,
+.fa-regular.fa-gift,
+.fa-solid.fa-basket-shopping {
+  font-size: 1.2rem;
+  color: rgb(241, 241, 241);
+  width: 10px;
+  text-shadow: 1px 1px 3px black;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.spacer {
+  background-color: black;
+}
+
+/* Lines between list items */
+.web-menu li {
+  border-bottom: 2px solid rgb(0, 0, 0);
+  padding: 0.5rem 0;
+}
+
+.web-menu li:last-child {
+  border-bottom: none;
+}

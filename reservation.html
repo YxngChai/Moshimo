@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style></style>
-    <link rel="stylesheet" href="burger.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style/burger.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/reservation-page.css" />
+    <script src="scripts/main.js" defer></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet" />
@@ -32,30 +34,32 @@
         <ul class="web-menu">
           <li>
             <i class="fa-solid fa-address-card"></i
-            ><a href="https://www.moshimo.co.uk/members/">Membership</a>
+            ><a href="membership.html">Membership</a>
           </li>
           <li>
             <i class="fa-solid fa-calendar-check"></i
             ><a href="reservation.html">Reservation</a>
           </li>
-          <li><i class="fa-solid fa-book-open"></i><a href="">Menus</a></li>
+          <li>
+            <i class="fa-solid fa-book-open"></i
+            ><a href="index.html#menus-anchor">Menus</a>
+          </li>
           <li>
             <i class="fa-solid fa-champagne-glasses"></i
-            ><a href="">Temaki Party</a>
+            ><a href="index.html#temaki-anchor">Temaki Party</a>
           </li>
           <li>
             <i class="fa-solid fa-basket-shopping"></i
-            ><a href="https://shop.moshimo.co.uk" target="_blank">Vouchers</a>
+            ><a href="index.html#vouchers-anchor" target="_blank">Vouchers</a>
           </li>
           <li>
             <i class="fa-regular fa-gift"></i
-            ><a
-              href="https://app.squareup.com/gift/ML3TQ2N0521BD/order"
-              target="_blank"
-              >Gift Cards</a
-            >
+            ><a href="index.html#giftcards" target="_blank">Gift Cards</a>
           </li>
-          <li><i class="fa-regular fa-envelope"></i><a href="">Contact</a></li>
+          <li>
+            <i class="fa-regular fa-envelope"></i
+            ><a href="#contact-info">Contact</a>
+          </li>
         </ul>
       </nav>
       <div id="logo">
@@ -69,30 +73,34 @@
     </header>
     <main>
       <div>
-        <a id="floating-membership" href="https://www.moshimo.co.uk/members/"
-          >Membership</a
-        >
+        <a id="floating-membership" href="membership.html">Membership</a>
       </div>
-      <div class="reservations">
-        <img src="images/resdiary-widget.png" alt="resdiary-widget" />
+      <div class="reservation-page">
+        <img
+          src="images/resdiary-widget.png"
+          class="resdiary-widget"
+          alt="resdiary-widget" />
       </div>
     </main>
     <footer>
       <div class="footer" id="contact-info">
         <div class="foot">
-          <h3>Contact</h3>
+          <h4>Contact</h4>
+          <!-- Add google map link -->
           <p>Opticon, Bartholomew Square. Brighton. East Sussex. BN1 1JS</p>
+          <p>12 - 9 &nbsp;&nbsp;Mon - Sat</p>
+          <p>12 - 6 &nbsp;&nbsp;Sun</p>
           <a href="mailto:info@moshimo.co.uk">info@moshimo.co.uk</a>
           <a href="tel:+441273719195">01273 719195</a>
           <div id="social">
             <a href="https://instagram.com/moshimobrighton" target="_blank"
               ><i class="fa-brands fa-instagram"></i
             ></a>
-            <a href="https://x.com/moshimobrighton" target="_blank"
-              ><i class="fa-brands fa-x-twitter"></i
-            ></a>
             <a href="https://www.facebook.com/MoshimoBrighton/" target="_blank"
               ><i class="fa-brands fa-square-facebook"></i
+            ></a>
+            <a href="https://x.com/moshimobrighton" target="_blank"
+              ><i class="fa-brands fa-x-twitter"></i
             ></a>
             <a
               href="https://deliveroo.co.uk/menu/brighton/brighton-centre/moshimo"
@@ -106,6 +114,5 @@
         </div>
       </div>
     </footer>
-    <script src="script.js"></script>
   </body>
 </html>

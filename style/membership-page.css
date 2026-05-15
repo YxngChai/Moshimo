@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+.membership-page {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../images/indoor1.jpg") center / cover;
+  min-height: 70vh;
+}
+.login-card {
+  height: 350px;
+  width: 300px;
+  background-color: rgb(177, 15, 15);
+  border-radius: 40px;
+  border: 3px solid rgba(255, 217, 0, 0.646);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.login-card input {
+  width: 200px;
+  font-family: "Lato";
+  font-size: 1em;
+  text-align: center;
+  padding: 10px;
+}
+.login-buttons {
+  display: flex;
+  gap: 40px;
+}
+.login-buttons input {
+  all: unset;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  padding: 10px;
+  width: 50px;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  border: 1px solid black;
+  font-family: "Lato";
+}
+.login-buttons button {
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  padding: 10px;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  font-family: "Lato";
+}

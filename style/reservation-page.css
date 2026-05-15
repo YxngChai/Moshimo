@@ -1,0 +1,13 @@
+.reservation-page {
+  width: 100%;
+  background: url("../images/indoor1.jpg") center / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.resdiary-widget {
+  width: 95%;
+  max-width: 800px;
+  margin: 50px;
+  border-radius: 25px;
+}
