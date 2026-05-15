@@ -1,14 +1,14 @@
-# ** Moshimo Website Redesign 🍣**
+# Moshimo Website Redesign 🍣
 
 A modern front-end redesign of a Japanese restaurant website originally built on a basic WordPress template. This project was created as a **self-taught learning exercise**, building everything from scratch without following a pre-made design.
 
-## **Overview**
+## Overview
 
 This is a full static website built using **HTML, CSS, and JavaScript**, focused on redesigning and modernising an existing restaurant website.
 
 Instead of starting from a template or mockup, each section was designed and implemented progressively, which made the project a hands-on way to learn core web development concepts.
 
-## **Goals of the Project 🎯 **
+## Goals of the Project 🎯
 
 - Rebuild an outdated restaurant website into a modern responsive UI
 - Learn by doing rather than following tutorials
@@ -16,17 +16,17 @@ Instead of starting from a template or mockup, each section was designed and imp
 - Practice responsive layouts and UI animations
 - Improve JavaScript interactivity skills
 
-## **What I Learned**
+## What I Learned
 
 This project forced me to learn and apply concepts as I needed them:
 
-### ** HTML & Structure**
+### HTML & Structure
 
 - Semantic layout (header, sections, footer)
 - Organising complex page structure
 - Accessibility basics (ARIA attributes in navigation)
 
-### ** CSS**
+### CSS
 
 - Flexbox and Grid layouts for responsive design
 - Positioning and layering (absolute/fixed elements)
@@ -34,7 +34,7 @@ This project forced me to learn and apply concepts as I needed them:
 - Responsive design with media queries
 - Advanced UI effects (hover states, overlays, blur effects)
 
-### ** JavaScript**
+### JavaScript
 
 - Mobile burger menu logic
 - State toggling with classes
@@ -42,7 +42,7 @@ This project forced me to learn and apply concepts as I needed them:
 - Scroll-based effects (fade-in / reveal)
 - Simple UI interaction handling
 
-## **Key Features 🛠️ **
+## Key Features 🛠️
 
 - Fully responsive design (mobile-first burger menu)
 - Grid-based menu section with hover effects
@@ -52,7 +52,7 @@ This project forced me to learn and apply concepts as I needed them:
 - Gift cards & voucher UI components
 - Restaurant info footer with contact links
 
-## ** What Makes This Project Interesting**
+## What Makes This Project Interesting
 
 This wasn’t a “follow a design and implement it” project.
 
@@ -65,7 +65,7 @@ Instead:
 
 This approach made the project messy at times, but much closer to real-world learning.
 
-## ** Tech Stack**
+## Tech Stack
 
 - HTML5
 - CSS3 (Flexbox, Grid, Animations)
@@ -73,7 +73,7 @@ This approach made the project messy at times, but much closer to real-world lea
 - Font Awesome icons
 - Google Fonts
 
-## **Possible Future Improvements 📌 **
+## Possible Future Improvements 📌
 
 - Refactor CSS into a more modular structure
 - Improve accessibility (keyboard navigation, focus states)
@@ -81,6 +81,6 @@ This approach made the project messy at times, but much closer to real-world lea
 - Convert to a component-based structure (React or similar)
 - Add backend for real booking system
 
-## **Preview**
+## Preview
 
 ![Website demo](images/demo.gif)
