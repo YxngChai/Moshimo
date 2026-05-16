@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+input {
+  appearance: none;
+}
 .membership-page {
   display: grid;
   grid-template-rows: 1fr auto;
@@ -14,30 +17,44 @@
   min-height: 70vh;
 }
 .login-card {
-  height: 350px;
+  margin: 30px 0;
+  /* min-height: 350px; */
   width: 300px;
-  background-color: rgb(177, 15, 15);
+  background-color: rgb(203, 22, 22);
   border-radius: 40px;
-  border: 3px solid rgba(255, 217, 0, 0.646);
+  border: 3px solid rgb(17, 17, 17);
+  box-shadow: 0 0 10px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 35px;
+}
+h1 {
+  margin-top: 30px;
+  font-family: "Lato";
+  color: rgb(236, 234, 234);
+  font-size: 1.5em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.701);
 }
 
-.login-card input {
+.form-input {
   width: 200px;
   font-family: "Lato";
   font-size: 1em;
-  text-align: center;
+  /* text-align: center; */
   padding: 10px;
+  border: 1px solid gainsboro;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.56);
 }
+
 .login-buttons {
   display: flex;
   gap: 40px;
+  margin-bottom: 30px;
 }
-.login-buttons input {
+.login-btn {
   all: unset;
   background-color: rgb(255, 255, 255);
   border-radius: 25px;
@@ -48,14 +65,17 @@
   text-align: center;
   border: 1px solid black;
   font-family: "Lato";
+  font-size: 1em;
 }
-.login-buttons button {
+.signup-btn {
   background-color: black;
   color: white;
   border-radius: 25px;
+  font-size: 1em;
   padding: 10px;
-  width: 80px;
+  width: 100px;
   text-align: center;
   cursor: pointer;
   font-family: "Lato";
+  border: 1px solid rgb(185, 185, 185);
 }
