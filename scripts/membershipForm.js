@@ -48,7 +48,7 @@ const membershipRegister = `
           </div>
 `;
 
-const MembershipLogin = `
+const membershipLogin = `
             <h1>Moshimo Membership</h1>
             <input class="form-input" type="email" name="username" placeholder="email"required/>
           <input class="form-input" type="password" name="password" placeholder="password" required/>
@@ -59,4 +59,28 @@ const MembershipLogin = `
 
 const form = document.querySelector(".membership-form");
 
-form.innerHTML = MembershipLogin;
+form.innerHTML = membershipLogin;
+
+let loginBtn = document.querySelector(".login-btn");
+let signupBtn = document.querySelector(".signup-btn");
+
+form.addEventListener("click", (e) => {
+  if (e.target.matches(".login-btn")) {
+    if (e.target.tagName === "INPUT") {
+      checkingCredentials();
+    } else {
+      form.innerHTML = membershipLogin;
+    }
+  }
+  if (e.target.matches(".signup-btn")) {
+    if (e.target.tagName === "INPUT") {
+      checkingCredentials();
+    } else {
+      form.innerHTML = membershipRegister;
+    }
+  }
+});
+
+function checkingCredentials() {
+  console.log("Please wait");
+}
