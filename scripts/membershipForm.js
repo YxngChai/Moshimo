@@ -19,7 +19,6 @@ const membershipRegister = `
             placeholder="phone"
             maxlength="11"
             required />
-
           <input
             class="form-input"
             type="date"
@@ -44,16 +43,16 @@ const membershipRegister = `
               class="signup-btn"
               type="submit"
               name="Signup"
-              value="Sign Up" />
+              value="Signup" />
           </div>
 `;
 
 const membershipLogin = `
             <h1>Moshimo Membership</h1>
-            <input class="form-input" type="email" name="username" placeholder="email"required/>
+            <input class="form-input" type="email" name="email" placeholder="email"required/>
           <input class="form-input" type="password" name="password" placeholder="password" required/>
           <div class="login-buttons">
-            <input class="login-btn" type="submit" name="login" value="Log in" />
+            <input class="login-btn" type="submit" name="login" value="Login" />
             <button class="signup-btn">Sign Up</button> </div>
 `;
 
@@ -68,30 +67,56 @@ let loginBtn = document.querySelector(".login-btn");
 let signupBtn = document.querySelector(".signup-btn");
 
 form.addEventListener("click", (e) => {
-  if (e.target.matches(".login-btn")) {
-    if (e.target.tagName === "INPUT") {
-      checkingCredentials();
-    } else {
-      form.innerHTML = membershipLogin;
-    }
+  if (e.target.matches(".login-btn") && e.target.tagName !== "INPUT") {
+    form.innerHTML = membershipLogin;
   }
-  if (e.target.matches(".signup-btn")) {
-    if (e.target.tagName === "INPUT") {
-      checkingCredentials();
-    } else {
-      form.innerHTML = membershipRegister;
+  if (e.target.matches(".signup-btn") && e.target.tagName !== "INPUT") {
+    form.innerHTML = membershipRegister;
+  }
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const userEmail = formData.get("email");
+  const userPassword = formData.get("password");
+
+  if (userEmail === correctEmail && userPassword === correctPassword) {
+    console.log("Enter Member Area");
+  } else {
+    const buttons = document.querySelector(".login-buttons");
+    const errorMsg = document.querySelector(".error-msg");
+
+    if (!errorMsg) {
+      const wrongDetails = buttons.insertAdjacentHTML(
+        "beforebegin",
+        `<p class="error-msg">incorrect username or password</p>`,
+      );
     }
   }
 });
 
 function checkingCredentials() {
-  const buttons = document.querySelector(".login-buttons");
+  console.log("check");
+  const submitter = document.querySelector("input[value=Login]");
 
+  console.log(formData);
+
+  const buttons = document.querySelector(".login-buttons");
   const errorMsg = document.querySelector(".error-msg");
+
   if (!errorMsg) {
-    const wrongDetails = buttons.insertAdjacentHTML(
+    buttons.insertAdjacentHTML(
       "beforebegin",
       `<p class="error-msg">incorrect username or password</p>`,
     );
   }
 }
+
+// if (form.querySelector(".login-btn[type='submit']")) {
+//   checkingCredentials(username, password);
+// }
+// if (form.querySelector(".signup-btn[type='submit']")) {
+//   registerUser(username, password);
+// }
