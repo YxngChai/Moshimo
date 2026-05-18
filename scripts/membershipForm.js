@@ -57,6 +57,9 @@ const membershipLogin = `
             <button class="signup-btn">Sign Up</button> </div>
 `;
 
+const correctEmail = "moshimomaster@moshimo.co.uk";
+const correctPassword = "moshimoshi";
+
 const form = document.querySelector(".membership-form");
 
 form.innerHTML = membershipLogin;
@@ -82,5 +85,13 @@ form.addEventListener("click", (e) => {
 });
 
 function checkingCredentials() {
-  console.log("Please wait");
+  const buttons = document.querySelector(".login-buttons");
+
+  const errorMsg = document.querySelector(".error-msg");
+  if (!errorMsg) {
+    const wrongDetails = buttons.insertAdjacentHTML(
+      "beforebegin",
+      `<p class="error-msg">incorrect username or password</p>`,
+    );
+  }
 }

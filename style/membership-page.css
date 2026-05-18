@@ -78,3 +78,10 @@ h1 {
   font-family: "Lato";
   border: 1px solid rgb(185, 185, 185);
 }
+.error-msg {
+  color: white;
+  font-family: "lato";
+  padding: 8px 5px 8px 5px;
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+}
