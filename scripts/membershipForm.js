@@ -23,7 +23,7 @@ const membershipRegister = `
             class="form-input"
             type="date"
             id="birthdate"
-            min="2008-05-15"
+            max="2008-05-15"
             placeholder="dd/mm/yyyy" />
           <input
             class="form-input"
@@ -56,6 +56,10 @@ const membershipLogin = `
             <button class="signup-btn">Sign Up</button> </div>
 `;
 
+const membershipWelcome = `
+            <h1 class="moshimoWelcome">Welcome Moshimo Member!</h1>
+        `;
+
 const correctEmail = "moshimomaster@moshimo.co.uk";
 const correctPassword = "moshimoshi";
 
@@ -79,44 +83,29 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const formData = new FormData(form);
-  const userEmail = formData.get("email");
-  const userPassword = formData.get("password");
+  if (form.querySelector(".login-btn[type='submit']")) {
+    const userEmail = formData.get("email");
+    const userPassword = formData.get("password");
+    if (userEmail === correctEmail && userPassword === correctPassword) {
+      console.log("Enter Member Area");
+      form.innerHTML = membershipWelcome;
+    } else {
+      const buttons = document.querySelector(".login-buttons");
+      const errorMsg = document.querySelector(".error-msg");
 
-  if (userEmail === correctEmail && userPassword === correctPassword) {
-    console.log("Enter Member Area");
-  } else {
-    const buttons = document.querySelector(".login-buttons");
-    const errorMsg = document.querySelector(".error-msg");
-
-    if (!errorMsg) {
-      const wrongDetails = buttons.insertAdjacentHTML(
-        "beforebegin",
-        `<p class="error-msg">incorrect username or password</p>`,
-      );
+      if (!errorMsg) {
+        const wrongDetails = buttons.insertAdjacentHTML(
+          "beforebegin",
+          `<p class="error-msg">incorrect username or password</p>`,
+        );
+      }
     }
   }
-});
-
-function checkingCredentials() {
-  console.log("check");
-  const submitter = document.querySelector("input[value=Login]");
-
-  console.log(formData);
-
-  const buttons = document.querySelector(".login-buttons");
-  const errorMsg = document.querySelector(".error-msg");
-
-  if (!errorMsg) {
-    buttons.insertAdjacentHTML(
-      "beforebegin",
-      `<p class="error-msg">incorrect username or password</p>`,
-    );
+  if (form.querySelector(".signup-btn[type='submit']")) {
+    const userFirstName = formData.get("firstName");
+    form.innerHTML = `
+            <h1 class="moshimoWelcome">Welcome ${userFirstName}!</h1>
+            <p class="emailVerify">Please verify your email</p>
+        `;
   }
-}
-
-// if (form.querySelector(".login-btn[type='submit']")) {
-//   checkingCredentials(username, password);
-// }
-// if (form.querySelector(".signup-btn[type='submit']")) {
-//   registerUser(username, password);
-// }
+});
