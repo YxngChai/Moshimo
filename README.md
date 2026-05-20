@@ -41,6 +41,7 @@ This project forced me to learn and apply concepts as I needed them:
 - IntersectionObserver for scroll animations
 - Scroll-based effects (fade-in / reveal)
 - Simple UI interaction handling
+- Mock membership log in / sign up form
 
 ## Key Features 🛠️
 
@@ -51,6 +52,7 @@ This project forced me to learn and apply concepts as I needed them:
 - Instagram-style animated carousel
 - Gift cards & voucher UI components
 - Restaurant info footer with contact links
+- Login / Signup form
 
 ## What Makes This Project Interesting
 
